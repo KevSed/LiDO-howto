@@ -1,0 +1,110 @@
+\documentclass[aspectratio=1610, professionalfonts, 10pt]{beamer}
+
+% Lade das TU Dortund Theme von Max Nöthe
+\usefonttheme[onlymath]{serif}
+\usetheme[showtotalframes]{tudo}
+
+% Lade richtiges Sprachpaket
+\ifluatex
+    \usepackage{polyglossia}
+    \setmainlanguage{english}
+\else
+    \ifxetex
+        \usepackage{polyglossia}
+        \setmainlanguage{german}
+    \else
+        \usepackage[german]{babel}
+    \fi
+\fi
+
+% Lade wichtige Mathematikpakete
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{cancel}
+\usepackage[
+  locale=DE,                   % deutsche Einstellungen
+  separate-uncertainty=true,   % Immer Fehler mit \pm
+  per-mode=symbol-or-fraction, % m/s im Text, sonst Brüche
+]{siunitx}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{framed}
+\usepackage{multicol}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{appendixnumberbeamer}
+\usepackage{tikz}
+\usepackage[export]{adjustbox}
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{subfigure}
+\usepackage{listings}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=bash,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+
+% Lade Paket zur Nutzung von Schleifen
+\usepackage{forloop}
+
+% ------------------------- Präsentationsinformationen -------------------------
+
+% Titel:
+\title{\textbf{LiDO3: \\ The Linux Dortmund cluster}}
+% Autoren:
+\author[Kevin Sedlaczek, Björn Wendland]{\textit{Kevin Sedlaczek, Björn Wendland}}
+% Titelbild:
+% \titlegraphic{\includegraphics[width=0.22\linewidth, rotate=270]{fig/title.png}}
+
+% Datum:
+\date{\today}
+% Lehrstuhl/Fakultät:
+\institute[TU Dortmund]{Lehrstuhl für Experimentelle Physik IV}
+
+\institute[%
+  {exp. physik 4}
+  % {\includegraphics[height=\headerheight]{logos/fact.pdf}}%
+  % \hspace{1em}%
+  % {\includegraphics[height=\headerheight]{logos/e5logo.pdf}}%
+]{
+  {\includegraphics[height=1.0cm]{logos/tu.pdf}}%
+  % \hspace{1em}%
+  % {\includegraphics[height=0.75cm]{logos/ethz.pdf}}%
+  % \hspace{1em}%
+  % {\includegraphics[height=0.75cm]{logos/isdc.pdf}}%
+  % \hspace{1em}%
+  % {\includegraphics[height=0.75cm]{logos/uniwue.pdf}}%
+}
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,shadow=true]{title}
+    \usebeamerfont{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+% Titelgrafik:
+% \titlegraphic{\includegraphics[width=0.4\textwidth]{logos/FACTLogo_preliminary.png}\hfill\includegraphics[width=0.4\textwidth]{logos/e5logo_green_text.pdf}}
