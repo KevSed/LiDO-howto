@@ -1,0 +1,23 @@
+Host proxy-lido3
+ User <username>
+ Hostname gw01.lido.tu-dortmund.de
+ IdentityFile ~/.ssh/id_rsa.lido3
+ IdentitiesOnly yes
+ ForwardX11 yes
+ ForwardX11Trusted yes
+ ProxyCommand ssh e4login nc gw01.lido.tu-dortmund.de 22
+
+Host lido3
+ User <username>
+ Hostname gw01.lido.tu-dortmund.de
+ IdentityFile ~/.ssh/id_rsa.lido3
+ IdentitiesOnly yes
+ ForwardX11 yes
+ ForwardX11Trusted yes
+
+Host e4login
+  Hostname <e4login>.tu-dortmund.de
+  User <username>
+  ForwardX11Trusted yes
+  ForwardX11 yes
+  IdentitiesOnly yes
