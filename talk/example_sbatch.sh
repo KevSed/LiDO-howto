@@ -17,16 +17,11 @@ source .bash_profile
 source .bashrc
 module purge
 module add root python/3.6.4 texlive/2017 make/4.2.1 cmake/3.8.2 git tensorflow
-export MG="MG5_aMC_v2_6_5"
 conda activate py2r616
-
-
-
-
-make CTG=$CTG -B generator
+make -B generator
 cd MG5_aMC_v2_6_5
-./bin/mg5_aMC /work/smkesedl/sensitivity_studies/generator_scripts/pp2ttbarctg$CTG.mg5
-cd /work/smkesedl/sensitivity_studies/
+./bin/mg5_aMC /work/<username>/generator_scripts/pp2ttbarctg$CTG.mg5
+cd /work/<username>/
 cd /work/<username>/hello_world/
 make EVENTS=10000 all
 cd ../hello_universe/$MG
