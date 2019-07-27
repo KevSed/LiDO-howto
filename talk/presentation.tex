@@ -197,7 +197,33 @@
     \item \texttt{conda} oder \texttt{miniconda} im home-Verzeichnis installieren und Installation mit \texttt{--user}
     \item Software im home-Verzeichnis, außer wenn Schreibrechte nötig sind (z.B. MG5)
   \end{itemize}
+\end{frame}
 
+\begin{frame}
+  \centering
+  \Huge{Examples}
+\end{frame}
+
+\begin{frame}
+
+\end{frame}
+
+\begin{frame}{Examples}
+  \begin{itemize}
+    \item quotas zu Beginn des logins
+    \item home Partition in \texttt{/home/<username>} oder \texttt{\$HOME}
+    \item work Partition in \texttt{/work/<username>} oder \texttt{\$WORK}
+    \item verfügbare module über \texttt{module avail} (root, python, tensorflow, texlive, compiler, matlab...)
+    \item geladene module über \texttt{module list}
+  \end{itemize}
+  Helloworld example:
+  \begin{itemize}
+    \item Knoten reservieren \texttt{salloc –N 1 –t 00:05:00 –p short}
+    \item Konsole auf allokiertem Knoten starten \texttt{srun --pty bash}
+    \item gcc modul laden \texttt{module load gcc}
+    \item Programm kompilieren (output im home geht nicht) \texttt{g++ helloworld.cpp  –o helloworld}
+    \item Ausführen \texttt{./helloworld}
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{Literatur}
